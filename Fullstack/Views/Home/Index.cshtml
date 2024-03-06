@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Json Fsharp Converter";
+}
+
+<div class="h-screen p-20   w-screen">
+    <div class="flex justify-center">
+        <h1 class="font-bold text-6xl">Hi</h1>
+    </div>
+    <div class="container h-5/6">
+        <div class="flex h-full gap-5">
+            <div class="w-1/6">
+                <div class="border">
+                    <ul>
+                        <li>Use triple Slash</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="w-5/6 flex h-5/6 gap-5">
+                <div class="w-1/2 h-full">
+                    <div id="main-content" class="w-full h-full cursor-text border p-6" contenteditable="true">
+                        a
+                    </div>
+                </div>
+                <div class="w-1/2 h-5/6" id="result">
+                    <div class="w-full h-full border p-6">
+                        b
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <button id="generate">Generieren</button>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript">
+        $('#generate').on('click', async function () {
+            const data = $('#main-content').text()
+
+            try {
+                const result = await fetch('', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        jsonString: data
+                    })
+                })
+
+                if (result.status !== 200) {
+                    console.log(result)
+                    return
+                }
+
+                const json = await result.json()
+                $('#result').text(JSON.stringify(json['result']))
+            } catch (err) {
+                console.log(err)
+            }
+
+
+        })
+
+    </script>
+}
