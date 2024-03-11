@@ -7,7 +7,12 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Server", "Server\Server.fsp
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Fullstack", "Fullstack\Fullstack.fsproj", "{A706D696-17F6-4E62-A9FE-AFFEF035AB77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{4945B838-051D-4700-A6AE-FA08BBF1C73E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{4945B838-051D-4700-A6AE-FA08BBF1C73E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1826E4D6-67B2-4098-A1CA-C4D4D06D5093}"
+	ProjectSection(SolutionItems) = preProject
+		jsontest.fsx = jsontest.fsx
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
